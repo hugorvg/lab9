@@ -26,6 +26,7 @@ function Login() {
             setMessage("Authentication failed. Incorrect username or password.");
         }
             })
+        .catch(error => setMessage('Authentication failed. Incorrect username or password.'));
         }
 
     if (authenticated) {
@@ -34,6 +35,7 @@ function Login() {
     }
 
     return (
+        <div>
         <div className="loginDiv">
             <h1>Login</h1>
             <label>Username:</label>
@@ -41,8 +43,10 @@ function Login() {
             <label>Password:</label>
             <input type="password" onChange={(e) => setPassword(e.target.value)} />
             <button onClick={handleLogin}>Login</button>
-            <p>{message}</p>
     </div>
+        <p>{message}</p>
+    </div>
+
     );
     };
 
